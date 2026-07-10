@@ -8,10 +8,7 @@
     <title>programme | AfriConnect Summit 2026</title>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet"
@@ -25,18 +22,95 @@
 
     <!-- Header -->
     <header>
-
+<nav>
+            <div class="logo">AfriConnect Summit 2026</div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="intervenants.html">Intervenants</a></li>
+                <li><a href="contact.html">Inscription</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Basculer le mode sombre"><i class="bi bi-moon-stars"></i></button>
+            <div class="hamburger" aria-label="Menu mobile"><i class="bi bi-list"></i></div>
+        </nav>
     </header>
 
     <!-- Contenu principal -->
     <main>
+        <nav aria-label="Fil d'Ariane">
+                <p><a href="index.html">Accueil</a> > Programme</p>
+            </nav>
+        <h1>Programme de l'événement</h1>
+        <nav aria-label="Navigation par jour">
+            <button onclick="showDay(1)">Jour 1</button>
+            <button onclick="showDay(2)">Jour 2</button>
+            <button onclick="showDay(3)">Jour 3</button>
+        </nav>
 
+       <section id="schedule">
+            <div id="day1" class="day-content">
+                <table>
+                    <thead><tr><th>Heure</th><th>Session</th><th>Intervenant</th><th>Salle</th></tr></thead>
+                    <tbody>
+                        <tr><td>09:00</td><td>Ouverture</td><td>Keynote</td><td>Salle A</td></tr>
+                        <tr><td>10:30</td><td>IA & Futur</td><td>Expert 1</td><td>Salle B</td></tr>
+                        <tr><td>14:00</td><td>Atelier Code</td><td>Formateur</td><td>Lab 1</td></tr>
+                        <tr><td>16:00</td><td>Table ronde</td><td>Panel</td><td>Salle A</td></tr>
+                        <tr><td>18:00</td><td>Networking</td><td>Tous</td><td>Hall</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="day2" class="day-content" style="display:none;">
+                </div>
+        </section>
+
+        <section id="themes">
+    <h2>Nos Thématiques</h2>
+    <div class="themes-grid">
+        <article class="theme-card">
+            <i class="bi bi-cpu"></i> <h3>IA & Tech</h3>
+            <p>Explorez les avancées majeures de l'intelligence artificielle et leur impact sur l'écosystème numérique africain.</p>
+        </article>
+
+        <article class="theme-card">
+            <i class="bi bi-briefcase"></i>
+            <h3>Business & Startups</h3>
+            <p>Découvrez les stratégies de croissance, le financement et les clés de réussite pour les jeunes entrepreneurs du continent.</p>
+        </article>
+
+        <article class="theme-card">
+            <i class="bi bi-palette"></i>
+            <h3>Design UI/UX</h3>
+            <p>Apprenez à concevoir des interfaces intuitives adaptées aux spécificités et aux besoins des utilisateurs africains.</p>
+        </article>
+
+        <article class="theme-card">
+            <i class="bi bi-database"></i>
+            <h3>Data & Analyse</h3>
+            <p>Maîtrisez la gestion des données pour transformer l'information en décisions stratégiques et durables.</p>
+        </article>
+    </div>
+    </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-
-    </footer>
+   <footer>
+    <div class="footer-content">
+        <p>&copy; <span id="year"></span> AfriConnect Summit. Tous droits réservés.</p>
+        
+        <div class="social-links">
+            <a href="#"><i class="bi bi-linkedin" aria-label="LinkedIn"></i></a>
+            <a href="#"><i class="bi bi-twitter" aria-label="Twitter"></i></a>
+            <a href="#"><i class="bi bi-instagram" aria-label="Instagram"></i></a>
+            <a href="#"><i class="bi bi-facebook" aria-label="Facebook"></i></a>
+        </div>
+        
+        <button id="back-to-top" aria-label="Retour en haut">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+    </div>
+</footer>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>

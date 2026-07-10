@@ -8,11 +8,7 @@
     <title>intervenant | AfriConnect Summit 2026</title>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -25,19 +21,112 @@
 
     <!-- Header -->
     <header>
-
+<nav>
+            <div class="logo">AfriConnect Summit 2026</div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="intervenants.html">Intervenants</a></li>
+                <li><a href="contact.html">Inscription</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Basculer le mode sombre"><i class="bi bi-moon-stars"></i></button>
+            <div class="hamburger" aria-label="Menu mobile"><i class="bi bi-list"></i></div>
+        </nav>
     </header>
 
     <!-- Contenu principal -->
-    <main>
+   <main>
+        <section id="page-hero">
+            <nav aria-label="Fil d'Ariane">
+                <p><a href="index.html">Accueil</a> > Intervenants</p>
+            </nav>
+            <h1>Nos Intervenants</h1>
+        </section>
 
+        <section id="filter-section">
+            <div id="filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="ia">IA & Tech</button>
+                <button class="filter-btn" data-filter="biz">Business</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="data">Data</button>
+            </div>
+        </section>
+
+        <section id="speakers-grid">
+    <article class="speaker-card" data-category="ia">
+        <img src="images/speaker1.jpg" alt="Nom 1">
+        <h3>Amina Diallo</h3>
+        <p>IA & Tech</p>
+        <p>Sénégal</p>
+    </article>
+    <article class="speaker-card" data-category="ia">
+        <img src="images/speaker2.jpg" alt="Nom 2">
+        <h3>Jean Kébé</h3>
+        <p>IA & Tech</p>
+        <p>Nigeria</p>
+    </article>
+    <article class="speaker-card" data-category="ia">
+        <img src="images/speaker3.jpg" alt="Nom 3">
+        <h3>Fatou Diop</h3>
+        <p>IA & Tech</p>
+        <p>Kenya</p>
+    </article>
+    <article class="speaker-card" data-category="biz">
+        <img src="images/speaker4.jpg" alt="Nom 4">
+        <h3>Ousmane Keita</h3>
+        <p>Business</p>
+        <p>Ghana</p>
+    </article>
+    <article class="speaker-card" data-category="biz">
+        <img src="images/speaker5.jpg" alt="Nom 5">
+        <h3>Sara Sow</h3>
+        <p>Business</p>
+        <p>Côte d'Ivoire</p>
+    </article>
+    <article class="speaker-card" data-category="biz">
+        <img src="images/speaker6.jpg" alt="Nom 6">
+        <h3>Omar Al-Fassi</h3>
+        <p>Business</p>
+        <p>Maroc</p>
+    </article>
+    <article class="speaker-card" data-category="design">
+        <img src="images/speaker7.jpg" alt="Nom 7">
+        <h3>Léa Mensah</h3>
+        <p>Design</p>
+        <p>Tunisie</p>
+    </article>
+    <article class="speaker-card" data-category="data">
+        <img src="images/speaker8.jpg" alt="Nom 8">
+        <h3>Oumou Thiam</h3>
+        <p>Data</p>
+        <p>Afrique du Sud</p>
+    </article>
+    <article class="speaker-card" data-category="data">
+        <img src="images/speaker9.jpg" alt="Nom 9">
+        <h3>Yasmine Ali</h3>
+        <p>Data</p>
+        <p>Égypte</p>
+    </article>
+</section>
     </main>
-
     <!-- Footer -->
-    <footer>
-
-    </footer>
-
+   <footer>
+    <div class="footer-content">
+        <p>&copy; <span id="year"></span> AfriConnect Summit. Tous droits réservés.</p>
+        
+        <div class="social-links">
+            <a href="#"><i class="bi bi-linkedin" aria-label="LinkedIn"></i></a>
+            <a href="#"><i class="bi bi-twitter" aria-label="Twitter"></i></a>
+            <a href="#"><i class="bi bi-instagram" aria-label="Instagram"></i></a>
+            <a href="#"><i class="bi bi-facebook" aria-label="Facebook"></i></a>
+        </div>
+        
+        <button id="back-to-top" aria-label="Retour en haut">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+    </div>
+</footer>
     <!-- JavaScript -->
     <script src="js/main.js"></script>
 
