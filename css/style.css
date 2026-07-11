@@ -1,1 +1,46 @@
-/* Feuille de style du projet AfriConnect Summit */
+
+/* 1. VARIABLES : Centralisation des couleurs et styles */
+:root {
+    --primary-color: #a3cef1;    /* Bleu principal (carte)*/
+    --secondary-color: #274C77;  /* Gris très foncé (titres) */
+    --text-color: #535452;       /* Gris texte standard */
+    --bg-color: #e7ecef;         /* Fond page */
+   --rayon-bordure: 20px;       /* Arrondi des éléments */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* 2. RESET CSS : Nettoyage des comportements par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. TYPOGRAPHIE & BASE : Style global du site */
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 4. UTILS : Container pour centrer le contenu proprement */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
