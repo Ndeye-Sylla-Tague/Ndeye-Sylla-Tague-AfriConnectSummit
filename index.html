@@ -16,10 +16,10 @@
 <body>
 
     <header>
-        <nav>
+        <nav class="container">
             <div class="logo">AfriConnect Summit 2026</div>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="programme.html">Programme</a></li>
                 <li><a href="intervenants.html">Intervenants</a></li>
                 <li><a href="contact.html">Inscription</a></li>
@@ -30,9 +30,9 @@
     </header>
 
     <main>
-        <section id="hero">
+        <section class="hero" >
             <h1>AfriConnect Summit 2026</h1>
-            <p>Le carrefour des leaders technologiques du continent | Dakar, 15-17 Octobre 2026</p>
+            <p>Le carrefour des leaders technologiques du continent <br>| Dakar, 15-17 Octobre 2026</p>
             <div class="cta-group">
                 <a href="contact.html" class="btn">S'inscrire</a>
                 <a href="#about" class="btn-outline">En savoir plus</a>
@@ -45,7 +45,7 @@
             </div>
         </section>
 
-        <section id="stats">
+        <section id="stats" class="container">
             <h2>L'impact en quelques chiffres</h2>
             <div class="stats-grid">
                 <article class="stat-item"><h3 data-target="1200">+1 200</h3><p>Participants</p></article>
@@ -54,8 +54,9 @@
                 <article class="stat-item"><h3 data-target="12">12</h3><p>Pays représentés</p></article>
             </div>
         </section>
+<!-- Pourquoi participer -->
 
-        <section id="about">
+        <section id="about" class="container">
             <h2>Pourquoi participer ?</h2>
             <div class="about-flex">
                 <article>
@@ -76,41 +77,49 @@
             </div>
         </section>
 
-        <section id="speakers">
+<!--Intervenants Vedettes-->
+        <section id="speakers" class="container">
             <h2>Intervenants Vedettes</h2>
             <div class="speakers-grid">
-                <article class="speaker-card"><img src="images/spk1.jpg" alt="Photo intervenant"><h3>Maimouna Ndiaye</h3><p>CEO Tech</p></article>
-                <article class="speaker-card"><img src="images/spk2.jpg" alt="Photo intervenant"><h3>Aicha Fall</h3><p>Lead Data</p></article>
-                <article class="speaker-card"><img src="images/spk3.jpg" alt="Photo intervenant"><h3>Malick Ndoye</h3><p>Designer UX</p></article>
-                <article class="speaker-card"><img src="images/spk4.jpg" alt="Photo intervenant"><h3>Penda Diop</h3><p>Investisseur</p></article>
+                <article class="speaker-card"><img src="images/maimounaNdiaye.jpg" alt="Photo intervenant"><h3>Maimouna Ndiaye</h3><p>CEO Tech</p><small>Sénégal</small></article>
+                <article class="speaker-card"><img src="images/AmadouDiallo.jpg" alt="Photo intervenant"><h3>Amadou Diallo</h3><p>Lead Data</p></article>
+                <article class="speaker-card"><img src="images/AwaSow.jpg" alt="Photo intervenant"><h3>Awa Sow</h3><p>Designer UX</p></article>
+                <article class="speaker-card"><img src="images/MoustaphaDiop.jpg" alt="Photo intervenant"><h3>Moustapha Diop</h3><p>Investisseur</p></article>
             </div>
             <a href="intervenants.html" class="btn">Voir tous les intervenants</a>
         </section>
-
-        <section id="sponsors">
-            <h2>Nos Partenaires</h2>
-            <div class="sponsors-list">
-                <div class="level-gold">Logo Sponsor Or</div>
-                <div class="level-silver">Logo Sponsor Argent</div>
-                <div class="level-bronze">Logo Sponsor Bronze</div>
-            </div>
-        </section>
+<section id="sponsors" class="container">
+    <h2>Nos Partenaires</h2>
+    <div class="sponsors-flex">
+        <div class="sponsor-item gold"><img src="images/sponsor-gold.png" alt="Or"></div>
+        <div class="sponsor-item silver"><img src="images/sponsor-argent.png" alt="Argent"></div>
+        <div class="sponsor-item bronze"><img src="images/sponsor-bronze.png" alt="Bronze"></div>
+    </div>
+</section>
     </main>
 
     <footer>
-    <div class="footer-content">
-        <p>&copy; <span id="year"></span> AfriConnect Summit. Tous droits réservés.</p>
+    <div class="footer-content container">
         
-        <div class="social-links">
-            <a href="#"><i class="bi bi-linkedin" aria-label="LinkedIn"></i></a>
-            <a href="#"><i class="bi bi-twitter" aria-label="Twitter"></i></a>
-            <a href="#"><i class="bi bi-instagram" aria-label="Instagram"></i></a>
-            <a href="#"><i class="bi bi-facebook" aria-label="Facebook"></i></a>
+        <div class="footer-col">
+            <p>&copy; <span id="year"></span> AfriConnect Summit.<br>Tous droits réservés.</p>
         </div>
-        
-        <button id="back-to-top" aria-label="Retour en haut">
-            <i class="bi bi-arrow-up"></i>
-        </button>
+
+        <div class="footer-col">
+            <div class="social-links">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <button id="back-to-top" aria-label="Retour en haut">
+                <i class="bi bi-arrow-up"></i>
+            </button>
+        </div>
+
     </div>
 </footer>
 
