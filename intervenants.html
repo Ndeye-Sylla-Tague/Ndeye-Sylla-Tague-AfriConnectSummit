@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>intervenant | AfriConnect Summit 2026</title>
+    <title>intervenants | AfriConnect Summit 2026</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,13 +21,16 @@
 <body>
 
     <!-- Header -->
-    <header>
-<nav>
-            <div class="logo">AfriConnect Summit 2026</div>
-            <ul>
+<header>
+        <nav class="container">
+            <div class="logo">
+                🌍 <span class="logo-primary">AfriConnect</span>
+                    <span class="logo-secondary">Summit 2026</span>
+                    </div>
+            <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="programme.html">Programme</a></li>
-                <li><a href="intervenants.html">Intervenants</a></li>
+                <li><a href="intervenants.html" class="active">Intervenants</a></li>
                 <li><a href="contact.html">Inscription</a></li>
             </ul>
             <button id="theme-toggle" aria-label="Basculer le mode sombre"><i class="bi bi-moon-stars"></i></button>
@@ -42,6 +45,7 @@
                 <p><a href="index.html">Accueil</a> > Intervenants</p>
             </nav>
             <h1>Nos Intervenants</h1>
+            <p>Découvrez les experts et conférenciers qui partageront leur vision lors du sommet.</p>
         </section>
 
         <section id="filter-section">
@@ -56,76 +60,142 @@
 
         <section id="speakers-grid">
     <article class="speaker-card" data-category="ia">
-        <img src="images/speaker1.jpg" alt="Nom 1">
-        <h3>Amina Diallo</h3>
+        <img src="images/speaker1.jpg" alt="Aminata Diallo">
+        <h3>Aminata Diallo</h3>
         <p>IA & Tech</p>
-        <p>Sénégal</p>
+        <p class="pays">Sénégal</p>
+        <a href="#" class="speaker-btn">
+    Voir profil
+</a>
     </article>
     <article class="speaker-card" data-category="ia">
-        <img src="images/speaker2.jpg" alt="Nom 2">
+        <img src="images/speaker2.jpg" alt="Jean Kébé">
         <h3>Jean Kébé</h3>
         <p>IA & Tech</p>
-        <p>Nigeria</p>
+        <p class="pays">Nigeria</p>
+        <a href="#" class="speaker-btn">
+    Voir profil
+</a>
     </article>
     <article class="speaker-card" data-category="ia">
-        <img src="images/speaker3.jpg" alt="Nom 3">
+        <img src="images/speaker3.jpg" alt="Fatou Diop">
         <h3>Fatou Diop</h3>
         <p>IA & Tech</p>
-        <p>Kenya</p>
+        <p class="pays">Kenya</p>
+        <a href="#" class="speaker-btn">
+    Voir profil
+</a>
     </article>
     <article class="speaker-card" data-category="biz">
-        <img src="images/speaker4.jpg" alt="Nom 4">
-        <h3>Ousmane Keita</h3>
+        <img src="images/speaker4.jpg" alt="Malick Ndoye">
+        <h3>Malick Ndoye</h3>
         <p>Business</p>
-        <p>Ghana</p>
+        <p class="pays">Ghana</p>
+        <a href="#" class="speaker-btn">
+    Voir profil
+</a>
     </article>
     <article class="speaker-card" data-category="biz">
-        <img src="images/speaker5.jpg" alt="Nom 5">
+        <img src="images/speaker5.jpg" alt="Sara Sow">
         <h3>Sara Sow</h3>
         <p>Business</p>
-        <p>Côte d'Ivoire</p>
+        <p class="pays">Côte d'Ivoire</p>
+        <a href="#" class="speaker-btn">
+    Voir profil
+</a>
     </article>
     <article class="speaker-card" data-category="biz">
-        <img src="images/speaker6.jpg" alt="Nom 6">
+        <img src="images/speaker6.jpg" alt="Omar Al-Fassi">
         <h3>Omar Al-Fassi</h3>
         <p>Business</p>
-        <p>Maroc</p>
+        <p class="pays">Maroc</p>
+        <a href="#" class="speaker-btn">
+    Voir profil
+</a>
     </article>
     <article class="speaker-card" data-category="design">
-        <img src="images/speaker7.jpg" alt="Nom 7">
+        <img src="images/speaker7.jpg" alt="Léa Mensah">
         <h3>Léa Mensah</h3>
         <p>Design</p>
-        <p>Tunisie</p>
+        <p class="pays">Tunisie</p>
+        <a href="#" class="speaker-btn">
+    Voir profil
+</a>
     </article>
     <article class="speaker-card" data-category="data">
-        <img src="images/speaker8.jpg" alt="Nom 8">
+        <img src="images/speaker8.jpg" alt="Oumou Thiam">
         <h3>Oumou Thiam</h3>
         <p>Data</p>
-        <p>Afrique du Sud</p>
+        <p class="pays">Afrique du Sud</p>
+        <a href="#" class="speaker-btn">
+    Voir profil
+</a>
     </article>
     <article class="speaker-card" data-category="data">
-        <img src="images/speaker9.jpg" alt="Nom 9">
+        <img src="images/speaker9.jpg" alt="Yasmine Ali">
         <h3>Yasmine Ali</h3>
         <p>Data</p>
-        <p>Égypte</p>
+        <p class="pays">Égypte</p>
+        <a href="#" class="speaker-btn">
+    Voir profil
+</a>
     </article>
 </section>
     </main>
     <!-- Footer -->
-   <footer>
-    <div class="footer-content">
-        <p>&copy; <span id="year"></span> AfriConnect Summit. Tous droits réservés.</p>
-        
-        <div class="social-links">
-            <a href="#"><i class="bi bi-linkedin" aria-label="LinkedIn"></i></a>
-            <a href="#"><i class="bi bi-twitter" aria-label="Twitter"></i></a>
-            <a href="#"><i class="bi bi-instagram" aria-label="Instagram"></i></a>
-            <a href="#"><i class="bi bi-facebook" aria-label="Facebook"></i></a>
+    <footer>
+    <div class="footer-content container">
+
+        <!-- Présentation -->
+        <div class="footer-col footer-brand">
+            <h3>AfriConnect Summit</h3>
+            <p>
+                Le sommet africain qui réunit les talents,
+                les entreprises et les innovateurs du numérique.
+            </p>
         </div>
-        
-        <button id="back-to-top" aria-label="Retour en haut">
-            <i class="bi bi-arrow-up"></i>
-        </button>
+
+        <!-- Navigation rapide -->
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="intervenants.html">Intervenants</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p>
+                <i class="bi bi-geo-alt"></i> Dakar, Sénégal
+            </p>
+            <p>
+                <i class="bi bi-envelope"></i> contact@africonnect.com
+            </p>
+        </div>
+
+        <!-- Réseaux sociaux -->
+        <div class="footer-col">
+            <h4>Suivez-nous</h4>
+            <div class="social-links">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+            </div>
+            <button id="back-to-top" aria-label="Retour en haut">
+                <i class="bi bi-arrow-up"></i>
+            </button>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>
+            &copy; <span id="year"></span> AfriConnect Summit.
+            Tous droits réservés.
+        </p>
     </div>
 </footer>
     <!-- JavaScript -->

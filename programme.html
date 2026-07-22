@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>programme | AfriConnect Summit 2026</title>
+    <title>Programme | AfriConnect Summit 2026</title>
 
     <!-- Google Fonts -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,12 +22,15 @@
 <body>
 
     <!-- Header -->
-    <header>
-<nav>
-            <div class="logo">AfriConnect Summit 2026</div>
-            <ul>
+<header>
+        <nav class="container">
+            <div class="logo">
+                🌍 <span class="logo-primary">AfriConnect</span>
+                    <span class="logo-secondary">Summit 2026</span>
+                    </div>
+            <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="programme.html">Programme</a></li>
+                <li><a href="programme.html" class="active">Programme</a></li>
                 <li><a href="intervenants.html">Intervenants</a></li>
                 <li><a href="contact.html">Inscription</a></li>
             </ul>
@@ -38,10 +41,17 @@
 
     <!-- Contenu principal -->
     <main>
-        <nav aria-label="Fil d'Ariane">
-                <p><a href="index.html">Accueil</a> > Programme</p>
-            </nav>
-        <h1>Programme de l'événement</h1>
+        
+            <section class="page-banner">
+                <div class="banner-content">
+                    <nav aria-label="Fil d'Ariane">
+                      <p><a href="index.html">Accueil</a> > Programme</p>
+                    </nav>
+                       <h1>Programme de l'événement</h1>
+                          <p>Consultez le planning détaillé des conférences, ateliers et panels de l'événement.</p>
+                </div>
+            </section>
+        
         <nav aria-label="Navigation par jour">
             <button onclick="showDay(1)">Jour 1</button>
             <button onclick="showDay(2)">Jour 2</button>
@@ -49,22 +59,48 @@
         </nav>
 
        <section id="schedule">
-            <div id="day1" class="day-content">
-                <table>
-                    <thead><tr><th>Heure</th><th>Session</th><th>Intervenant</th><th>Salle</th></tr></thead>
-                    <tbody>
-                        <tr><td>09:00</td><td>Ouverture</td><td>Keynote</td><td>Salle A</td></tr>
-                        <tr><td>10:30</td><td>IA & Futur</td><td>Expert 1</td><td>Salle B</td></tr>
-                        <tr><td>14:00</td><td>Atelier Code</td><td>Formateur</td><td>Lab 1</td></tr>
-                        <tr><td>16:00</td><td>Table ronde</td><td>Panel</td><td>Salle A</td></tr>
-                        <tr><td>18:00</td><td>Networking</td><td>Tous</td><td>Hall</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div id="day2" class="day-content" style="display:none;">
-                </div>
-        </section>
+    <!-- Jour 1 -->
+    <div id="day1" class="day-content">
+        <table class="schedule-table">
+            <thead><tr><th>Heure</th><th>Session</th><th>Intervenant</th><th>Salle</th></tr></thead>
+            <tbody>
+                <tr><td>09:00</td><td>Ouverture</td><td>Keynote</td><td>Salle A</td></tr>
+                <tr><td>10:30</td><td>IA & Futur</td><td>Expert 1</td><td>Salle B</td></tr>
+                <tr><td>14:00</td><td>Atelier Code</td><td>Formateur</td><td>Lab 1</td></tr>
+                <tr><td>16:00</td><td>Table ronde</td><td>Panel</td><td>Salle A</td></tr>
+                <tr><td>18:00</td><td>Networking</td><td>Tous</td><td>Hall</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Jour 2 -->
+    <div id="day2" class="day-content" style="display:none;">
+        <table>
+            <thead><tr><th>Heure</th><th>Session</th><th>Intervenant</th><th>Salle</th></tr></thead>
+            <tbody>
+                <tr><td>09:30</td><td>Data Mining</td><td>Dr. Data</td><td>Salle B</td></tr>
+                <tr><td>11:00</td><td>Cloud Computing</td><td>Cloud Expert</td><td>Salle A</td></tr>
+                <tr><td>14:30</td><td>CyberSécurité</td><td>Expert Secu</td><td>Lab 2</td></tr>
+                <tr><td>16:00</td><td>Pitch Startups</td><td>Investisseurs</td><td>Amphi</td></tr>
+                <tr><td>17:30</td><td>Cocktail</td><td>Tous</td><td>Hall</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Jour 3 -->
+    <div id="day3" class="day-content" style="display:none;">
+        <table>
+            <thead><tr><th>Heure</th><th>Session</th><th>Intervenant</th><th>Salle</th></tr></thead>
+            <tbody>
+                <tr><td>09:00</td><td>Design UI/UX</td><td>Designer Pro</td><td>Lab 1</td></tr>
+                <tr><td>11:00</td><td>Mobile Dev</td><td>Dev Mobile</td><td>Salle B</td></tr>
+                <tr><td>14:00</td><td>Blockchain</td><td>Expert Crypto</td><td>Salle A</td></tr>
+                <tr><td>15:30</td><td>Workshop IoT</td><td>Ingénieur</td><td>Lab 2</td></tr>
+                <tr><td>17:00</td><td>Clôture</td><td>Comité</td><td>Amphi</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 
         <section id="themes">
     <h2>Nos Thématiques</h2>
@@ -96,23 +132,60 @@
     </main>
 
     <!-- Footer -->
-   <footer>
-    <div class="footer-content">
-        <p>&copy; <span id="year"></span> AfriConnect Summit. Tous droits réservés.</p>
-        
-        <div class="social-links">
-            <a href="#"><i class="bi bi-linkedin" aria-label="LinkedIn"></i></a>
-            <a href="#"><i class="bi bi-twitter" aria-label="Twitter"></i></a>
-            <a href="#"><i class="bi bi-instagram" aria-label="Instagram"></i></a>
-            <a href="#"><i class="bi bi-facebook" aria-label="Facebook"></i></a>
+    <footer>
+    <div class="footer-content container">
+
+        <!-- Présentation -->
+        <div class="footer-col footer-brand">
+            <h3>AfriConnect Summit</h3>
+            <p>
+                Le sommet africain qui réunit les talents,
+                les entreprises et les innovateurs du numérique.
+            </p>
         </div>
-        
-        <button id="back-to-top" aria-label="Retour en haut">
-            <i class="bi bi-arrow-up"></i>
-        </button>
+
+        <!-- Navigation rapide -->
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="intervenants.html">Intervenants</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p>
+                <i class="bi bi-geo-alt"></i> Dakar, Sénégal
+            </p>
+            <p>
+                <i class="bi bi-envelope"></i> contact@africonnect.com
+            </p>
+        </div>
+        <!-- Réseaux sociaux -->
+        <div class="footer-col">
+            <h4>Suivez-nous</h4>
+            <div class="social-links">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+            </div>
+            <button id="back-to-top" aria-label="Retour en haut">
+                <i class="bi bi-arrow-up"></i>
+            </button>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>
+            &copy; <span id="year"></span> AfriConnect Summit.
+            Tous droits réservés.
+        </p>
     </div>
 </footer>
-
     <!-- JavaScript -->
     <script src="js/main.js"></script>
 
