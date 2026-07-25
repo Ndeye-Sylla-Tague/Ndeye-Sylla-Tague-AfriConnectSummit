@@ -21,15 +21,23 @@
                 🌍 <span class="logo-primary">AfriConnect</span>
                     <span class="logo-secondary">Summit 2026</span>
                     </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="programme.html">Programme</a></li>
                 <li><a href="intervenants.html">Intervenants</a></li>
                 <li><a href="contact.html" class="active">Inscription</a></li>
             </ul>
-            <button id="theme-toggle" aria-label="Basculer le mode sombre"><i class="bi bi-moon-stars"></i></button>
-            <div class="hamburger" aria-label="Menu mobile"><i class="bi bi-list"></i></div>
-        </nav>
+            <!-- Bouton Dark Mode / Light Mode -->
+                    <button id="theme-toggle" aria-label="Basculer le mode sombre">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+
+                    <!-- Bouton Hamburger structuré pour le JS et le CSS pur -->
+                    <button class="hamburger" id="hamburger-btn" aria-label="Menu mobile">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
     </header>
 
     <main>
@@ -115,7 +123,6 @@
         
         <section id="map">
             <iframe src="https://www.google.com/maps/embed?pb=..." title="Localisation"></iframe>
-        </div>
         </section>
         </section>
 
@@ -184,7 +191,7 @@
 
     <div class="footer-bottom">
         <p>
-            &copy; <span id="year"></span> AfriConnect Summit.
+            &copy; <span class="current-year"></span> AfriConnect Summit.
             Tous droits réservés.
         </p>
     </div>

@@ -3,7 +3,7 @@
     --primary-color: #a3cef1;    /* Bleu principal (carte)*/
     --secondary-color: #274C77;  /* Bleu foncé (titres) */
     --text-color: #535452;       /* Gris texte standard */
-    --bg-color: #e7ecef;         /* Fond page */
+    --bg-color: #e3eaee;         /* Fond page */
    --rayon-bordure: 20px;       /* Arrondi des éléments */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -253,6 +253,18 @@ footer {
     color: rgba(255, 255, 255, 0.8);
     text-transform: uppercase;
 }
+.hero-badge{
+display:inline-block;
+padding:8px 20px;
+border-radius:30px;
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(10px);
+margin-bottom:20px;
+color:white;
+font-size:15px;
+font-weight:600;
+}
+
 /* 1. Titre de section */
 #stats {
     padding: 60px 0;
@@ -575,11 +587,11 @@ nav[aria-label="Navigation par jour"] button.active {
 /* Style général du tableau */
 table {
     width: 85%;       /* diminue la largeur du tableau */
-    margin: 40px auto; /* centre le tableau */
+    margin: 50px auto; /* centre le tableau */
     border-collapse: collapse;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     background-color: white;
-    
+    border-radius: 50px;
 }
 
 thead {
@@ -693,7 +705,10 @@ tbody tr:hover {
     padding: 80px 20px; /* Réduit pour être plus compact */
     text-align: center;
 }
-
+body.dark-mode #page-hero {
+    background: #0b1329 !important;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
 #page-hero h1 {
     color:var(--primary-color);
     font-size: 3rem;
@@ -858,7 +873,7 @@ input, select, textarea {
 /* Bouton d'envoi corrigé (court, arrondi et centré) */
 button[type="submit"] {
     display: block;
-    width: 180px; /* Largeur courte et élégante */
+    width: 500px; /* Largeur courte et élégante */
     margin: 20px auto 0 auto; /* Centré horizontalement */
     padding: 12px 20px;
     background: var(--primary-color, #6c5ce7);
@@ -961,9 +976,855 @@ details[open] summary::after {
     display: block;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
-/* Version Mobile */
+
+
+/*/////DARK MODE///////*/
+
+/* 1. On nettoie les sections pour qu'elles n'aient plus de cadre ou de fond de carte */
+body.dark-mode main > section {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 2. Le fond du body avec un magnifique dégradé bleu nuit et une touche de turquoise/bleu lumineux */
+body.dark-mode {
+    background: linear-gradient(135deg, #0b192c 0%, #1e3e62 50%, #000000 100%) !important;
+    color: #ffffff !important;
+    background-attachment: fixed !important;
+}
+
+/* 3. Uniquement les petites cartes intérieures (comme tes blocs de stats) gardent leur propre style */
+body.dark-mode .stat-item,
+body.dark-mode .speaker-card,
+body.dark-mode .about-flex article,
+body.dark-mode .sponsor-item {
+    background-color: rgba(15, 23, 42, 0.85); /* Fond semi-transparent sombre */
+    border: 5px solid rgba(56, 189, 248, 0.2); /* Fine bordure lumineuse */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+}
+
+/* 4. Harmonisation de tous les textes en blanc/clair */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode p, 
+body.dark-mode small {
+    color: #f1f5f9 !important;
+}
+/* ==========================================
+   NAVIGATION ET FOOTER EN BLEU DE NUIT (DARK MODE)
+   ========================================== */
+
+/* 1. La barre de navigation en haut */
+body.dark-mode header,
+body.dark-mode nav {
+    background-color: #0b1329 !important; /* Un bleu de nuit profond et élégant */
+    border-bottom: 1px solid rgba(56, 189, 248, 0.15); /* Une fine bordure lumineuse subtile */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* 2. Le footer en bas de page */
+body.dark-mode footer {
+    background-color: #070d1b !important; /* Un bleu de nuit encore plus sombre pour bien fermer la page */
+    border-top: 1px solid rgba(56, 189, 248, 0.15);
+    color: #f1f5f9 !important;
+}
+
+/* 3. Assurer que les liens et textes à l'intérieur restent bien lisibles */
+body.dark-mode nav a,
+body.dark-mode footer a,
+body.dark-mode footer p,
+body.dark-mode footer h3,
+body.dark-mode footer h4 {
+    color: #f1f5f9 !important;
+}
+
+/* Effet au survol des liens de navigation en mode sombre */
+body.dark-mode nav a:hover,
+body.dark-mode footer a:hover {
+    color: #38bdf8 !important; /* Une touche de bleu turquoise lumineux au survol */
+}
+/* ==========================================
+   FORMULAIRE DE CONTACT ET FAQ EN MODE SOMBRE
+   ========================================== */
+
+/* 1. Les blocs du formulaire de contact et des champs de saisie */
+body.dark-mode form,
+body.dark-mode .contact-form,
+body.dark-mode .form-container {
+    background-color: #0b1329 !important; /* Fond bleu de nuit */
+    border: 1px solid rgba(56, 189, 248, 0.2); /* Fine bordure lumineuse */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: #ffffff !important;
+    border-radius: 16px;
+}
+
+/* 2. Les champs de texte et les boutons du formulaire */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #1e293b !important; /* Bleu nuit un peu plus clair pour écrire dedans */
+    border: 1px solid #334155 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* 3. Les éléments de la FAQ (questions / réponses) */
+body.dark-mode .faq-item,
+body.dark-mode .accordion-item,
+body.dark-mode details {
+    background-color: #0b1329 !important;
+    border: 1px solid rgba(56, 189, 248, 0.15) !important;
+    color: #ffffff !important;
+    border-radius: 12px;
+}
+
+body.dark-mode .faq-item h3,
+body.dark-mode .faq-item p,
+body.dark-mode .accordion-button,
+body.dark-mode summary {
+    color: #f1f5f9 !important;
+    background-color: transparent !important;
+}
+/* ==========================================
+   CORRECTION DE LA SECTION FAQ EN MODE SOMBRE
+   ========================================== */
+
+/* 1. On enlève le fond clair global derrière la FAQ */
+body.dark-mode .faq-section,
+body.dark-mode .faq-container,
+body.dark-mode section:has(.faq-item) {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* 2. On s'assure que chaque bloc de question/réponse de la FAQ est bien en bleu de nuit */
+body.dark-mode .faq-item,
+body.dark-mode details {
+    background-color: #0b1329 !important; /* Bleu de nuit */
+    border: 1px solid rgba(56, 189, 248, 0.2) !important; /* Fine bordure lumineuse */
+    color: #ffffff !important;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+/* 3. Le texte des questions et réponses de la FAQ en blanc/clair */
+body.dark-mode .faq-item h3,
+body.dark-mode .faq-item p,
+body.dark-mode summary,
+body.dark-mode .faq-answer {
+    color: #f1f5f9 !important;
+    background-color: transparent !important;
+}
+/* ==========================================
+   CORRECTION DES BANDES ET DU TABLEAU EN MODE SOMBRE
+   ========================================== */
+/* ==========================================
+   CORRECTIF FINAL : SUPPRESSION DES BANDES & HARMONISATION
+   ========================================== */
+
+/* 1. Rendre totalement transparentes les zones autour des boutons de jours et du fil d'Ariane */
+body.dark-mode .jours-container,
+body.dark-mode .filters,
+body.dark-mode .tabs-container,
+body.dark-mode .breadcrumb-container {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 2. Cibler spécifiquement les conteneurs qui font ces bandes parasites sur la page programme */
+body.dark-mode section > div:has(.jours),
+body.dark-mode section > div:has(nav),
+body.dark-mode .programme-hero {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* 3. Garder uniquement ton grand bloc central "Programme de l'événement" bien stylisé */
+body.dark-mode .page-banner {
+    background-color: #0b1329 !important;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+/* ==========================================
+   STYLE DE LA BANNIÈRE DE PAGE (.page-banner) EN MODE SOMBRE
+   ========================================== */
+body.dark-mode .page-banner {
+    background-color: #0b1329 !important; /* Fond bleu de nuit pour la bannière */
+    border-bottom: 1px solid rgba(56, 189, 248, 0.15); /* Fine bordure lumineuse */
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    border-radius: 0 0 16px 16px; /* Arrondi uniquement en bas pour faire un beau bandeau */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+body.dark-mode .page-banner h1 {
+    color: #f1f5f9 !important;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .page-banner p {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .page-banner nav p,
+body.dark-mode .page-banner a {
+    color: #38bdf8 !important; /* Couleur turquoise pour le fil d'Ariane Accueil > Programme */
+    text-decoration: none;
+}
+
+body.dark-mode .page-banner a:hover {
+    text-decoration: underline;
+}
+/* 1. On cible proprement le tableau unique */
+table {
+    width: 100% !important;
+    max-width: 1000px !important;
+    min-width: 700px !important;
+    margin: 20px auto !important;
+    border-collapse: collapse;
+    table-layout: auto !important;
+    border-radius: 16px; /* Remis à 16px pour éviter les bords trop arrondis (50px faisait un effet de bulle) */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 2. Le conteneur du tableau (sans forcer de display: block répétitif) */
+.table-container {
+    width: 100% !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* 3. Style des cellules en mode sombre */
+body.dark-mode table {
+    background-color: #0b1329 !important;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+body.dark-mode th {
+    background-color: #1e293b !important;
+    color: #38bdf8 !important;
+    padding: 15px 20px !important;
+    text-align: left;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+    white-space: nowrap;
+}
+
+body.dark-mode td {
+    background-color: #0b1329 !important;
+    color: #f1f5f9 !important;
+    padding: 15px 20px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+}
+
+body.dark-mode tr:hover td {
+    background-color: #111c38 !important;
+}body.dark-mode .page-banner *,
+body.dark-mode section.page-banner div {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Si les bandes sont des balises spécifiques comme <header>, <nav> ou des <div> juste sous la bannière */
+body.dark-mode .page-banner,
+body.dark-mode #page-hero {
+    background-color: #0b1329 !important; /* Fond bleu de nuit */
+    border-bottom: 1px solid rgba(56, 189, 248, 0.15); /* Fine bordure lumineuse */
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    border-radius: 0 0 16px 16px; /* Bords arrondis en bas pour faire un beau bandeau */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+body.dark-mode .page-banner h1,
+body.dark-mode #page-hero h1 {
+    color: #f1f5f9 !important;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .page-banner p,
+body.dark-mode #page-hero p {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .page-banner nav p,
+body.dark-mode .page-banner a,
+body.dark-mode #page-hero nav p,
+body.dark-mode #page-hero a {
+    color: #38bdf8 !important; /* Couleur turquoise pour les liens du fil d'Ariane */
+    text-decoration: none;
+}
+
+body.dark-mode .page-banner a:hover,
+body.dark-mode #page-hero a:hover {
+    text-decoration: underline;
+}
+
+/* Nettoyage des petites bandes parasites autour des filtres ou des jours */
+body.dark-mode .jours-container,
+body.dark-mode .filters,
+body.dark-mode .tabs-container,
+body.dark-mode .breadcrumb-container {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+/* Nettoyage total et radical du conteneur du fil d'Ariane */
+body.dark-mode .page-banner nav,
+body.dark-mode #page-hero nav,
+body.dark-mode .breadcrumb,
+body.dark-mode [class*="breadcrumb"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+/* Suppression totale des bordures ou fonds internes persistants dans le bandeau */
+body.dark-mode .page-banner *,
+body.dark-mode #page-hero * {
+    background-color: transparent !important;
+}
+
+/* On force le conteneur principal du bandeau à avoir un fond uni sans lignes parasites */
+body.dark-mode .page-banner,
+body.dark-mode #page-hero {
+    background: #0b1329 !important;
+    background-image: none !important;
+    border: none !important;
+}
+/* Restauration du padding du bandeau pour que le texte soit bien à l'intérieur */
+body.dark-mode .page-banner,
+body.dark-mode #page-hero {
+    padding: 60px 20px 40px 20px !important;
+    margin-top: 20px !important; /* Ajoute un espace sous la navbar principale */
+}
+
+/* Cible spécifique et directe de la navigation par jour */
+body.dark-mode nav[aria-label="Navigation par jour"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+/* Décalage propre pour éviter que la bannière ne colle sous la navbar fixe */
+body.dark-mode .page-banner,
+body.dark-mode #page-hero {
+    margin-top: 90px !important; /* Force un espace net sous la navbar fixe */
+}
+/* --- Style de base de la Navbar --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+/* --- Effet Navbar dynamique au scroll (>80px) --- */
+header.scrolled {
+    background-color: var(--nav-bg, #0b1329) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding: 10px 0;
+}
+
+/* --- Bouton Hamburger (caché sur PC) --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 3px;
+    background-color: currentColor;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* --- Bouton Retour en haut --- */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #38bdf8;
+    color: #0b1329;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    transition: transform 0.2s;
+}
+
+#back-to-top:hover {
+    transform: scale(1.1);
+}
+
+
+/* Ajoute de l'espace à l'intérieur du premier bloc de la page */
+body.dark-mode .hero,
+body.dark-mode #hero,
+body.dark-mode header + * {
+    padding-top: 40px !important;
+}
+/* Décale tout le bloc hero (image de fond comprise) vers le bas */
+section.hero {
+    margin-top: 90px !important; /* Crée l'espace vide entre la navbar et ton image */
+    padding-top: 70px;          /* Espace à l'intérieur pour le texte */
+    min-height: calc(100vh - 80px);
+    box-sizing: border-box;
+}
+
+/* --- RESPONSIVITÉ & MENU HAMBURGER --- */
+
+/* Par défaut sur PC, on cache le bouton hamburger */
+.hamburger {
+    display: none;
+}
+
+/* Sur mobile et tablette (écrans de 768px ou moins) */
 @media (max-width: 768px) {
+    /* 1. Afficher le bouton hamburger */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1002;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #274C77; /* Couleur des barres */
+        border-radius: 3px;
+        transition: 0.3s ease;
+    }
+
+    /* Animation du hamburger en croix (X) quand il est actif */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* 2. Cacher le menu de base et le transformer en panneau latéral */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Caché hors de l'écran à droite */
+        width: 70%;
+        height: 100vh;
+        background-color: #0b1329; /* Fond sombre du menu */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        transition: right 0.4s ease-in-out;
+        z-index: 1001;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    }
+
+    /* Quand le JS ajoute la classe .active, le menu glisse sur l'écran */
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Texte des liens en blanc dans le menu mobile */
+    .nav-links a {
+        color: #ffffff !important;
+        font-size: 1.2rem;
+    }
+}
+/* --- CORRECTION DU DÉBORDEMENT MOBILE (375px et moins) --- */
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Empêche tout défilement horizontal indésirable */
+}
+
+/* S'assure que toutes les images et boîtes s'adaptent à la largeur de l'écran */
+img, video, iframe, .container, section {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+/* --- AJUSTEMENT PROPRE POUR PETITS MOBILES (375px) --- */
+@media (max-width: 480px) {
+    /* Réduire un peu les marges globales des sections si elles sont trop larges */
+    body {
+        font-size: 14px;
+    }
+
+    /* Forcer les conteneurs à prendre toute la largeur sans déborder */
+    .container, 
+    header, 
+    footer, 
+    section {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Transformer toutes les grilles (cartes, intervenants, etc.) en une seule colonne */
+    .speakers-grid, 
+    .program-grid, 
+    .grid, 
+    .cards-container {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* S'assurer que les titres ne sont pas trop grands pour l'écran */
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    h2 {
+        font-size: 1.5rem !important;
+    }
+}
+/* --- SÉCURITÉ ANTI-DÉBORDEMENT ABSOLUE --- */
+* {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+/* S'assurer que les images et tableaux ne dépassent jamais */
+img, table, figure {
+    height: auto !important;
+    max-width: 100% !important;
+}
+/* --- FORCER TOUS LES CONTENEURS ET SECTIONS SUR MOBILE --- */
+@media (max-width: 768px) {
+    /* Annuler les largeurs fixes et marges excessives */
+    div, section, header, footer, main, article {
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Forcer les grilles de cartes ou d'éléments à passer en 1 seule colonne */
+    .speakers-grid, 
+    .cards-container, 
+    .grid, 
+    .row {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 0 10px !important;
+    }
+}
+/* --- RESPONSIVITÉ SPÉCIALE PETITS MOBILES (Max 480px) --- */
+@media (max-width: 480px) {
+    /* Forcer tous les conteneurs et sections à s'adapter à 375px / petits écrans */
+    div, section, header, footer, main, article {
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    /* Transformer toutes les grilles d'éléments en une seule colonne */
+    .speakers-grid, 
+    .cards-container, 
+    .grid, 
+    .row {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 15px !important;
+    }
+
+    /* Réduire un peu les titres pour qu'ils ne soient pas coupés */
+    h1 {
+        font-size: 1.6rem !important;
+    }
+    h2 {
+        font-size: 1.3rem !important;
+    }
+}
+/* --- CORRECTION FINALE MOBILE 375px --- */
+@media (max-width: 480px) {
+    /* 1. Forcer le compte à rebours à passer sur 2 colonnes ou s'empiler proprement */
+    .countdown-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .time-unit {
+        width: 100% !important;
+        padding: 8px !important;
+    }
+
+    /* 2. S'assurer que les images des intervenants ne dépassent pas de leur carte */
+    .speaker-card img {
+        width: 100% !important;
+        height: 200px !important;
+        object-fit: cover !important;
+    }
+
+    /* 3. Sécurité globale pour éviter tout défilement horizontal */
+    body, html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+}
+/* --- CORRECTION DE LA SECTION STATS SUR MOBILE --- */
+@media (max-width: 480px) {
+    .stats-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 chiffres par ligne sur mobile */
+        gap: 15px !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .stat-item {
+        width: 100% !important;
+        padding: 15px 10px !important;
+        box-sizing: border-box !important;
+        text-align: center;
+    }
+}
+/* --- CORRECTION DE LA SECTION "POURQUOI PARTICIPER" SUR MOBILE --- */
+@media (max-width: 480px) {
+    .about-flex {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .about-flex article {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+/* --- CORRECTION DU FOOTER SUR MOBILE --- */
+@media (max-width: 480px) {
+    .footer-content.container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    .footer-col {
+        width: 100% !important;
+        text-align: left !important;
+    }
+}
+/* --- CORRECTION DES TABLEAUX SUR MOBILE (375px) --- */
+@media (max-width: 480px) {
+    /* Permettre au tableau de défiler horizontalement de façon propre sans casser la page */
+    .day-content {
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 20px;
+    }
+
+    /* Forcer les tableaux à s'adapter et éviter les textes trop serrés */
+    .schedule-table, 
+    .day-content table {
+        width: 100% !important;
+        min-width: 320px !important; /* Garde une taille lisible sans tout écraser */
+        font-size: 0.85rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .schedule-table th, 
+    .schedule-table td, 
+    .day-content th, 
+    .day-content td {
+        padding: 8px 6px !important;
+        text-align: left;
+    }
+}
+/* --- CORRECTION PAGE CONTACT SUR MOBILE (375px) --- */
+@media (max-width: 480px) {
     #registration {
-        grid-template-columns: 1fr; /* Tout s'empile proprement sur téléphone */
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    #registration form, 
+    .right-column, 
+    .faq-container, 
+    #map {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #registration input, 
+    #registration select, 
+    #registration textarea {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+/* --- CORRECTION FINALE DE LA GRILLE DES INTERVENANTS SUR PC --- */
+@media (min-width: 992px) {
+    #speakers-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* Force exactement 3 colonnes */
+        gap: 30px !important;
+        max-width: 1140px !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    #speakers-grid .speaker-card {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+/* --- CORRECTION POUR LE TABLEAU ET LES THÉMATIQUES SUR PC --- */
+@media (min-width: 992px) {
+    /* 1. Encadrer et centrer les tableaux du programme */
+    .schedule-table, 
+    .day-content table {
+        max-width: 1140px !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+    }
+}
+    /* 2. Forcer un affichage propre des 4 cartes thématiques (par exemple 2x2 ou une grille équilibrée) */
+   @media (min-width: 992px) {
+    .themes-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Force exactement 2 colonnes */
+        gap: 30px !important;
+        max-width: 800px !important; /* Contrôle la largeur globale de la grille pour ne pas qu'elles soient trop étirées */
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .theme-card {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+/* --- CORRECTION ESPACEMENT NAVBAR ET FIL D'ARIANE --- */
+header {
+    margin-bottom: 10px !important;
+}
+
+/* S'assurer que le conteneur du haut laisse bien respirer le fil d'Ariane */
+.page-banner, 
+#page-hero {
+    margin-top: 100px !important;
+    padding-top: 20px !important;
+}
+
+/* Rendre le fil d'Ariane bien visible et non masqué */
+.page-banner nav, 
+#page-hero nav {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-bottom: 10px !important;
+}
+/* --- CORRECTION POUR LES JOURS DU PROGRAMME ET LE TABLEAU --- */
+
+@media (min-width: 992px) {
+    .schedule-table, 
+    .day-content table {
+        max-width: 1140px !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
     }
 }
