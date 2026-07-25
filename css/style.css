@@ -111,38 +111,96 @@ header {
 }
 /* 3. HERO : Bannière principale */
 .hero {
-    /* 1. L'image de fond */
-    background-image: url('../images/image9.jpg'); /* Mets ici le chemin vers l' image */
-    background-size: cover;          /* L'image couvre tout l'espace sans être déformée */
-    background-position: center;     /* Centre l'image dans le bloc */
-    background-repeat: no-repeat;
+    /* 1. Fond gris clair avec des pointillés sombres */
+    background: 
+        radial-gradient(rgba(39, 76, 119, 0.25) 1.3px, transparent 1.3px), 
+        linear-gradient(135deg, #e3eaee 0%, #e3eaee 100%);
     
-    /* 2. Assombrir l'image pour que le texte blanc soit lisible */
-    background-blend-mode: overlay;
-    background-color: rgba(10, 23, 43, 0.85); /* le bleu sombre, 70% d'opacité */
+    background-size: 24px 24px, 100% 100%;
+    background-position: 0 0, center;
     
-    /* 3. Hauteur plein écran */
+    /* 2. Mise en page */
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    color: white;
-    text-align: center;
-    margin: 30px  10px;
-    border-radius: 20px;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+/* 3. Forcer TOUS les textes du Hero à être bien visibles (#274C77 ou noir) */
+.hero h1, 
+.hero h2, 
+.hero h3, 
+.hero p,
+.hero span,
+.hero li {
+    color: #274C77 !important;
+}
+
+/* Si tu as un paragraphe de description ou un sous-titre que tu veux en noir pur pour un max de contraste */
+.hero p {
+    color: #1e293b !important; 
+}
+/* Le conteneur qui met les deux côtés côte à côte */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Côté texte à gauche */
+.hero-text-side {
+    flex: 1;
+    text-align: left; /* Aligné à gauche pour faire plus pro */
 }
 
 .hero h1 {
-    font-size: 4rem;     /* Un titre bien grand pour l'impact */
-    color: white;        /* En blanc pour contraster avec le bleu */
-    margin-bottom: 10px;
-    line-height: 1.2;  /* Pour que le titre ne soit pas trop serré */
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 15px;
+    line-height: 1.2;
 }
 
 .hero p {
-    color: #f0f4f8;      /* Un blanc cassé pour le sous-titre, c'est plus doux */
-    font-size: 1.6rem;
+    color: #f0f4f8;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* Côté image à droite */
+.hero-image-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-img-right {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Version mobile : passe l'image en dessous du texte sur les petits écrans */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text-side {
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
 }
 
 /* 4. GRILLES : Alignement horizontal des éléments */
@@ -223,35 +281,50 @@ footer {
 /* Conteneur principal du compteur */
 .countdown-grid {
     display: flex;
-    justify-content: center; /* Centre les éléments */
-    gap: 20px;               /* Espace entre les 4 blocs */
-    margin: 30px 0;          /* Espace en haut et en bas */
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
 }
 
-/* Chaque bloc individuel (00 Jours, etc.) */
+/* 1. STYLE PAR DÉFAUT (Mode Clair) : Cartes blanches opaques et lisibles */
 .time-unit {
-    background: rgba(255, 255, 255, 0.15); /* Fond semi-transparent élégant */
-    backdrop-filter: blur(5px);            /* Effet de verre dépoli */
+    background: white;
     padding: 20px;
     border-radius: 12px;
     text-align: center;
-    width: 100px;                          /* Largeur fixe pour que ce soit aligné */
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100px;
+    border: 1px solid #e7ecef;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Le chiffre (ex: 00) */
 .time-unit span {
     display: block;
     font-size: 2rem;
     font-weight: bold;
-    color: white;
+    color: var(--secondary-color); /* #274C77 */
 }
 
-/* Le texte en dessous (ex: Jours) */
 .time-unit small {
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-color);
     text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* 2. STYLE EN MODE SOMBRE : Retour à l'effet verre dépoli et texte blanc d'avant */
+body.dark-mode .time-unit {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: none !important;
+}
+
+body.dark-mode .time-unit span {
+    color: white !important;
+}
+
+body.dark-mode .time-unit small {
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 .hero-badge{
 display:inline-block;
@@ -1193,6 +1266,7 @@ body.dark-mode .page-banner a {
 body.dark-mode .page-banner a:hover {
     text-decoration: underline;
 }
+
 /* 1. On cible proprement le tableau unique */
 table {
     width: 100% !important;
@@ -1428,6 +1502,15 @@ body.dark-mode .hero,
 body.dark-mode #hero,
 body.dark-mode header + * {
     padding-top: 40px !important;
+    
+}
+body.dark-mode .hero,
+body.dark-mode #hero {
+    background: 
+        radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px), 
+        linear-gradient(135deg, #0b192c 0%, #1e3e62 50%, #000000 100%) !important;
+    background-size: 24px 24px, 100% 100% !important;
+    background-position: 0 0, center !important;
 }
 /* Décale tout le bloc hero (image de fond comprise) vers le bas */
 section.hero {
@@ -1827,4 +1910,148 @@ header {
         margin-right: auto !important;
         box-sizing: border-box !important;
     }
+}
+/* --- STYLE DE LA SECTION FILTRES --- */
+#filter-section {
+    text-align: center;
+    margin: 30px 0 40px 0;
+}
+
+#filters {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+/* --- STYLES DE VALIDATION DU FORMULAIRE --- */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Classes dynamiques de validation */
+.form-group.success input,
+.form-group.success textarea {
+    border-color: #22c55e !important; /* Vert */
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #ef4444 !important; /* Rouge */
+}
+
+/* Message d'erreur sous le champ */
+.error-message {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Message de succès stylisé */
+#form-success-msg {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #22c55e;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+/* --- ANIMATION FADE-IN --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+/* --- EFFET ZOOM-IN POUR LES INTERVENANTS --- */
+.speaker-zoom {
+    opacity: 0;
+    transform: scale(0.6) translateY(30px); /* Commence tout petit et un peu plus bas */
+    transition: opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.speaker-zoom.active-speaker {
+    opacity: 1 !important;
+    transform: scale(1) translateY(0) !important; /* Grandit pour atteindre sa taille normale */
+}
+/* --- ANIMATION HERO DE LA DROITE VERS LA GAUCHE --- */
+.hero-slide-right {
+    opacity: 0;
+    transform: translateX(80px); /* Commence décalé sur la droite */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hero-slide-right.active-hero {
+    opacity: 1 !important;
+    transform: translateX(0) !important; /* Glisse pour arriver à sa position normale */
+}
+.h1-slide-right {
+    opacity: 0;
+    transform: translateX(80px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.h1-slide-right.active-h1 {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+/* 1. La carte complète zoome légèrement et proprement au survol */
+.stat-item,
+.speaker-card,
+.about-flex article {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.stat-item:hover,
+.speaker-card:hover,
+.about-flex article:hover {
+    transform: translateY(-8px) scale(1.02) !important; /* Petit effet de soulèvement et de zoom fluide */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 2. On s'assure que les titres et textes À L'INTÉRIEUR ne bougent pas de façon indépendante */
+.stat-item:hover h3,
+.speaker-card:hover h3,
+.about-flex article:hover h3,
+.stat-item:hover p,
+.speaker-card:hover p {
+    transform: none !important; /* Empêche tout double mouvement du texte */
 }
