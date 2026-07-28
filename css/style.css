@@ -140,7 +140,7 @@ header {
     color: #274C77 !important;
 }
 
-/* Si tu as un paragraphe de description ou un sous-titre que tu veux en noir pur pour un max de contraste */
+/* pour mettre un paragraphe de description ou un sous-titre que tu veux en noir pur pour un max de contraste */
 .hero p {
     color: #1e293b !important; 
 }
@@ -1086,9 +1086,7 @@ body.dark-mode p,
 body.dark-mode small {
     color: #f1f5f9 !important;
 }
-/* ==========================================
-   NAVIGATION ET FOOTER EN BLEU DE NUIT (DARK MODE)
-   ========================================== */
+/*NAVIGATION ET FOOTER EN BLEU DE NUIT (DARK MODE) */
 
 /* 1. La barre de navigation en haut */
 body.dark-mode header,
@@ -1119,9 +1117,7 @@ body.dark-mode nav a:hover,
 body.dark-mode footer a:hover {
     color: #38bdf8 !important; /* Une touche de bleu turquoise lumineux au survol */
 }
-/* ==========================================
-   FORMULAIRE DE CONTACT ET FAQ EN MODE SOMBRE
-   ========================================== */
+/* FORMULAIRE DE CONTACT ET FAQ EN MODE SOMBRE */
 
 /* 1. Les blocs du formulaire de contact et des champs de saisie */
 body.dark-mode form,
@@ -1165,9 +1161,8 @@ body.dark-mode summary {
     color: #f1f5f9 !important;
     background-color: transparent !important;
 }
-/* ==========================================
-   CORRECTION DE LA SECTION FAQ EN MODE SOMBRE
-   ========================================== */
+/*
+ CORRECTION DE LA SECTION FAQ EN MODE SOMBRE*/
 
 /* 1. On enlève le fond clair global derrière la FAQ */
 body.dark-mode .faq-section,
@@ -1195,13 +1190,7 @@ body.dark-mode .faq-answer {
     color: #f1f5f9 !important;
     background-color: transparent !important;
 }
-/* ==========================================
-   CORRECTION DES BANDES ET DU TABLEAU EN MODE SOMBRE
-   ========================================== */
-/* ==========================================
-   CORRECTIF FINAL : SUPPRESSION DES BANDES & HARMONISATION
-   ========================================== */
-
+/* CORRECTION DES BANDES ET DU TABLEAU EN MODE SOMBRE*/
 /* 1. Rendre totalement transparentes les zones autour des boutons de jours et du fil d'Ariane */
 body.dark-mode .jours-container,
 body.dark-mode .filters,
@@ -1234,9 +1223,7 @@ body.dark-mode .page-banner {
     text-align: center;
 }
 
-/* ==========================================
-   STYLE DE LA BANNIÈRE DE PAGE (.page-banner) EN MODE SOMBRE
-   ========================================== */
+/* STYLE DE LA BANNIÈRE DE PAGE (.page-banner) EN MODE SOMBRE*/
 body.dark-mode .page-banner {
     background-color: #0b1329 !important; /* Fond bleu de nuit pour la bannière */
     border-bottom: 1px solid rgba(56, 189, 248, 0.15); /* Fine bordure lumineuse */
